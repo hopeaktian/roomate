@@ -14,7 +14,7 @@ def index():
     return render_template('index.html', title="袋鼠邻居")
 @app.route('/login')
 def login():
-    return render_template('login.html', title="登陆袋鼠邻居")
+    return render_template('login.html', title="登陆  袋鼠邻居")
 
 if __name__ == '__main__':
     app.run()

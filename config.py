@@ -6,4 +6,4 @@ class ProdConfig(Config):
 
 class DevConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:Redhat@120.79.139.82:3306/flask_learn01"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:yourpassword@120.79.139.82:3306/flask_learn01"

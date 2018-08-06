@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{#    {% import 'bootstrap/wtf.html' as wtf %}#}
+{#    <div align="center" >#}
+{#        <form class="form" method="POST">#}
+{#            {{ form.hidden_tag() }}#}
+{#            {{ wtf.form_field(form.name) }}#}
+{#            {{ wtf.form_field(form.Password) }}#}
+{#            {{ wtf.form_field(form.gender) }}#}
+{#            {{ wtf.form_field(form.Email) }}#}
+{#            {{ wtf.form_field(form.Tel) }}#}
+{#            {{ wtf.form_field(form.submit) }}#}
+{#        </form>#}
+{#    </div>#}
+    <div class="container-fluid" style="background-image:url(../static/picture/register.jpg); background-size:100% 100%;">
+        <br>
+        <br>
+
+        <form class="form-horizontal" role="form" method="post" style="margin-left: 31%; margin-right: 31%; margin-top: 0%; margin-bottom: 5%; ">
+            <div class="text-center" >
+                <h1 class="heading" style="margin-top: -11px; margin-bottom: 41px; padding-bottom: 18px; color: #e0e0e0; ">欢迎注册</h1>
+            </div>
+            <div class="form-group">
+{#                <label  class="col-sm-4 control-label" style="color: #888888">用户名</label>#}
+                <div class="col-sm-8 col-sm-offset-2">
+                    <input type="text" class="form-control" name="Name" placeholder="请输入用户名" required="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+{#                <label  class="col-sm-4 control-label" style="color: #888888">密码</label>#}
+                <div class="col-sm-8 col-sm-offset-2">
+                    <input type="password" class="form-control" name="Password" placeholder="请输入密码" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+{#                <label  class="col-sm-4 control-label" style="color: #888888">邮件</label>#}
+                <div class="col-sm-8 col-sm-offset-2">
+                    <input type="email" class="form-control" name="Email" placeholder="请输入邮件" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+{#                <label  class="col-sm-4 control-label" style="color: #888888">电话</label>#}
+                <div class="col-sm-8 col-sm-offset-2">
+                    <input type="tel" class="form-control" name="Tel" placeholder="请输入电话" required="required" maxlength="11">
+                </div>
+            </div>
+            <div class="form-group">
+{#                <label class="col-sm-4 control-label" style="color: #888888">性别</label>#}
+                <div class="col-sm-2 col-sm-offset-2" >
+                    <input type="radio" name="Gender" value="1" class="radio-inline"><label style="color: #888888">男</label>
+                </div>
+                <div class="col-sm-3 col-sm-pull-1">
+                    <input type="radio" name="Gender" value="0" class="radio-inline"><label style="color: #888888">女</label>
+                </div>
+
+                <div class="col-sm-4 col-sm-pull-1">
+                    <button type="submit" class="btn btn-default">立即注册</button>
+                </div>
+
+            </div>
+            <div class="form-group">
+{#                <div class="col-sm-offset-4 col-sm-4">#}
+{#                    <button type="submit" class="btn btn-default">立即注册</button>#}
+{#                </div>#}
+            </div>
+
+            <div class="form-group">
+                {% if exist == 1 %}
+                <div class="alert alert-danger">
+                    注册失败！！用户名已存在!   换个更个性的用户名吧 -_-
+                </div>
+                {% elif flag == 1 %}
+                <div class="alert alert-success">
+                    恭喜您！注册成功
+                </div>
+                {% endif %}
+
+            </div>
+{#            {% for message in get_flashed_messages() %}#}
+{#                <div class="alert alert-warning">#}
+{#                    <button type="button" class="close" data-dismiss="alert">&times;</button>#}
+{#                    {{ message }}#}
+{#                </div>#}
+{#            {% endfor %}#}
+        </form>
+
+    </div>
+{% endblock content %}

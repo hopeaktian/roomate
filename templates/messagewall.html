@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+{#    <div class="container-fluid">#}
+{##}
+{#    </div>#}
+{##}
+{#    <div class="container input-group-addon input-lg" >#}
+{#        <form>#}
+{#            <input type="text" class="input-group-sm" name="message" placeholder="请在此输入留言内容" required="required">#}
+{##}
+{#        </form>#}
+{##}
+{##}
+{#    </div>#}
+{#    <div class="container">#}
+{#        <button type="submit">提交</button>#}
+{#    </div>#}
+{#    <h5 class="col-lg-1 col-lg-offset-1">留言</h5>#}
+{#留言展示区域#}
+<div class="container-fluid" style="background-color: #373d41; background-image:url(../static/picture/comment1.jpg); background-size:100% 100%">
+<br>
+<br>
+    <div class="container">
+        <div class="heading" style="margin-bottom: -19px">
+            <img src="../static/picture/4.gif" height="45px">
+            <header class="text-uppercase" style="font-weight: bolder; font-size: 27px; color: #09a0ba">最新留言</header>
+        </div>
+        <hr>
+        <div>
+
+            <div class="comment-post well" style="background-color: #bc8d8a82;">
+
+                {% for mes in range(lenth) %}
+                    <div class="row">
+                        <div class="col-sm-1" style="padding-left: 57px; width: auto">
+                            <img src="http://i.bootstrapmb.com/noavatar.gif" style="height: 20px; width: 20px;">
+                        </div>
+                        <div class="col-sm-6" style="">
+                            <h4 style="font-weight: 600; font-size: 1vw; width: auto">{{ allCri[mes].Nickname }}:</h4>
+                        </div>
+                        <div class="col-sm-5" style="">
+                            <h4 style="font-weight: 600; font-size: 1vw">{{ allCri[mes].Cri_Date }}:</h4>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 style="margin-left: 90px">{{ allCri[mes].Criticism }}</h4>
+                    </div>
+                    <hr size=3 style=" border-color: #000000; border-style:dotted;width:490">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    {#    留言框    #}
+
+    <form method="post">
+        <br>
+        <br>
+        <div class="container" >
+            <div class="heading" style="margin-bottom: -19px">
+                <header class="text-uppercase" style="font-weight: bolder; font-size: 27px; color: #09a0ba">留言处</header>
+            </div>
+            <hr>
+            <div class="comment-post well" style="height: auto; width: auto; background-color: #bc8d8a82;">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <img src="http://i.bootstrapmb.com/noavatar.gif" style="height: 30px; width: 30px;">
+                    </div>
+
+                    <div class="col-sm-11" >
+                        <input type="text" name="nickname" placeholder="我的昵称" required="required" style="height: 34px; width: 40%;">
+                    </div>
+
+
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="cmtcontainer col-sm-10 col-sm-offset-1" >
+                        <textarea name="criticism" placeholder="我也要吐槽" style="width: 80%; height: 101px; resize: none"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1 col-sm-offset-8">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </div>
+
+
+{#                <div class="col-sm-4">#}
+{#                    {% if success == 1 %}#}
+{#                        <div class="alert alert-success">#}
+{#                            留言成功！感谢您的支持 :)#}
+{#                        </div>#}
+{#                    {% endif %}#}
+{#                </div>#}
+            </div>
+
+        </div>
+    </form>
+
+
+
+
+
+
+
+</div>
+
+{% endblock content %}
